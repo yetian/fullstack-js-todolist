@@ -1,0 +1,20 @@
+{
+  "name": "js-fullstack-template",
+  "version": "1.0.0",
+  "description": "a full-stack template for js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon --watch . --inspect ./server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ye Tian",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "object-hash": "^2.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}

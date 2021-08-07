@@ -5,7 +5,7 @@ const hash = require('object-hash')
 module.exports = {
   todo_list: [],
   getAllTasks: function() {
-    return Object.assign(this.todo_list, {})
+    return [...this.todo_list]
   },
   getDoneTasks: function() {
     return this.todo_list.filter(todo => todo.is_done === true)
@@ -31,7 +31,7 @@ module.exports = {
     let id = hash(newTodo)
     newTodo.id = id
     this.todo_list.push(newTodo)
-    return newTodo
+    return Object.assign({}, newTodo)
   },
   update: function(id, title) {
     let existedTodo = this.todo_list.find(todo => todo.id === id)

@@ -1,14 +1,17 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const path = require("path")
 
 app.use(express.json({ extended: true }))
 app.use(express.urlencoded({ extended: true }))
 
+app.use(express.static('resources'))
+
 const store = require('./store/mem')
 
 app.get('/', (req, res, next) => {
-  res.send('hello world!')
+  res.sendFile(path.resolve(__dirname, "../resources/index.html"))
 })
 
 app.get('/api/todo', (req, res, next) => {
